@@ -20,14 +20,20 @@ flowchart TD
         I[Tailor discusses customization options]
         J[Tailor reviews agreement]
         K[Tailor receives escrow notification]
-        L[Tailor sews the garment]
+        L1[Tailor buys fabric]
+        L2[Tailor starts sewing]
+        L3[Tailor completes garment]
         P[Tailor delivers garment]
         Q[Tailor receives payment]
     end
 
     subgraph Blockchain
         R[NFT marketplace displays available clothes]
-        S[Hashed contract generated and stored]
+        S1[Hashed contract generated: "Contract Started"]
+        S2[Contract status updated: "Fabric Purchased"]
+        S3[Contract status updated: "Sewing In Progress"]
+        S4[Contract status updated: "Sewing Completed"]
+        S5[Contract status updated: "Contract Completed"]
         T[Solana escrow holds payment]
         U[Payment released to tailor]
     end
@@ -41,25 +47,33 @@ flowchart TD
     I --> E
     E --> F
     F --> J
-    J --> S
-    S --> G
+    J --> S1
+    S1 --> G
     G --> T
     T --> K
-    K --> L
-    L --> P
+    K --> L1
+    L1 --> S2
+    S2 --> L2
+    L2 --> S3
+    S3 --> L3
+    L3 --> S4
+    S4 --> P
     P --> M
     M --> N
     N --> O
     O --> U
     U --> Q
+    U --> S5
 
     classDef clientProcess fill:#d1f0ff,stroke:#0077b6
     classDef tailorProcess fill:#ffe8d6,stroke:#bc6c25
     classDef blockchainProcess fill:#e9ecef,stroke:#343a40
+    classDef contractStatus fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px
 
     class A,B,C,D,E,F,G,M,N,O clientProcess
-    class H,I,J,K,L,P,Q tailorProcess
-    class R,S,T,U blockchainProcess
+    class H,I,J,K,L1,L2,L3,P,Q tailorProcess
+    class R,T,U blockchainProcess
+    class S1,S2,S3,S4,S5 contractStatus
 ```
 
 ## Detailed Process:
@@ -76,14 +90,17 @@ flowchart TD
 
 3. **Agreement & Payment:**
    - Once both parties agree on terms
-   - Hashed contract agreement is generated and stored on-chain
+   - Hashed contract agreement is generated and stored on-chain with status "Contract Started"
    - Client makes payment to Solana escrow program
 
 4. **Production & Delivery:**
-   - Tailor sews the garment according to agreement
+   - Tailor buys fabric (contract status updated to "Fabric Purchased")
+   - Tailor begins sewing (contract status updated to "Sewing In Progress")
+   - Tailor completes the garment (contract status updated to "Sewing Completed")
    - Tailor delivers finished product to client (in-person or via dispatch)
 
 5. **Completion:**
    - Client confirms satisfactory delivery
    - Payment is released from escrow to tailor
-   - Contract remains permanently accessible on blockchain 
+   - Contract status is updated to "Contract Completed"
+   - Contract remains permanently accessible on blockchain with full status history 
