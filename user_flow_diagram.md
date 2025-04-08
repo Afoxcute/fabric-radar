@@ -29,11 +29,11 @@ flowchart TD
 
     subgraph Blockchain
         R[NFT marketplace displays available clothes]
-        S1[Hashed contract generated: "Contract Started"]
-        S2[Contract status updated: "Fabric Purchased"]
-        S3[Contract status updated: "Sewing In Progress"]
-        S4[Contract status updated: "Sewing Completed"]
-        S5[Contract status updated: "Contract Completed"]
+        S1[Hashed contract generated: Contract Started]
+        S2[Contract status updated: Fabric Purchased]
+        S3[Contract status updated: Sewing In Progress]
+        S4[Contract status updated: Sewing Completed]
+        S5[Contract status updated: Contract Completed]
         T[Solana escrow holds payment]
         U[Payment released to tailor]
     end
