@@ -3,7 +3,7 @@
 ```mermaid
 flowchart TB
     subgraph Client Layer
-        A[React.js/Next.js Web App]
+        A[Next.js Web App]
         B[React Native Mobile App]
         A1[Wallet Adapter: Phantom/Solflare]
         B1[WalletConnect Protocol]
@@ -111,7 +111,7 @@ flowchart TB
 ## Technical Component Details
 
 ### Client Layer
-- **React.js/Next.js Web App**: SSR-optimized SPA with TypeScript, Redux state management, and TailwindCSS
+- **Next.js Web App**: SSR-optimized SPA with TypeScript, Redux state management, and TailwindCSS
 - **React Native Mobile App**: Cross-platform mobile implementation with native modules for wallet integrations
 - **Wallet Adapter**: Integration with multiple Solana wallets via `@solana/wallet-adapter-react` library
 - **WalletConnect Protocol**: QR-based deep linking for mobile wallet authorization flow
