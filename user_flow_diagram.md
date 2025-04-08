@@ -65,10 +65,10 @@ flowchart TD
     U --> Q
     U --> S5
 
-    classDef clientProcess fill:#d1f0ff,stroke:#0077b6
-    classDef tailorProcess fill:#ffe8d6,stroke:#bc6c25
-    classDef blockchainProcess fill:#e9ecef,stroke:#343a40
-    classDef contractStatus fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px
+    classDef clientProcess fill:#d1f0ff,stroke:#0077b6,color:black
+    classDef tailorProcess fill:#ffe8d6,stroke:#bc6c25,color:black
+    classDef blockchainProcess fill:#e9ecef,stroke:#343a40,color:black
+    classDef contractStatus fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px,color:black
 
     class A,B,C,D,E,F,G,M,N,O clientProcess
     class H,I,J,K,L1,L2,L3,P,Q tailorProcess

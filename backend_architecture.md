@@ -95,11 +95,11 @@ flowchart TB
     K --- V
     
     %% Styling
-    classDef clientLayer fill:#d1f0ff,stroke:#0077b6,stroke-width:2px
-    classDef apiLayer fill:#ffe8d6,stroke:#bc6c25,stroke-width:2px
-    classDef blockchainLayer fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px
-    classDef storageLayer fill:#f8edeb,stroke:#9d8189,stroke-width:2px
-    classDef infraLayer fill:#e9ecef,stroke:#343a40,stroke-width:2px
+    classDef clientLayer fill:#d1f0ff,stroke:#0077b6,stroke-width:2px,color:black
+    classDef apiLayer fill:#ffe8d6,stroke:#bc6c25,stroke-width:2px,color:black
+    classDef blockchainLayer fill:#d8f3dc,stroke:#2d6a4f,stroke-width:2px,color:black
+    classDef storageLayer fill:#f8edeb,stroke:#9d8189,stroke-width:2px,color:black
+    classDef infraLayer fill:#e9ecef,stroke:#343a40,stroke-width:2px,color:black
     
     class A,B,A1,B1 clientLayer
     class C,D,E,F,G,H,X apiLayer
