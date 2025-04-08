@@ -14,22 +14,22 @@ flowchart TB
         D[OAuth2/JWT Auth + Wallet Auth Service]
         E[NFT Marketplace Microservice]
         F[WebSocket-based Messaging Service]
-        G[Smart Contract Interaction Service]
+        G[Smart program Interaction Service]
         H[Escrow Payment Orchestration Service]
         X[Redis Cache]
     end
 
     subgraph Blockchain Layer
         I[Metaplex NFT Protocol on Solana]
-        J[Custom Anchor Program: Contract Management]
+        J[Custom Anchor Program: program Management]
         K[Custom SPL Token-based Escrow Program]
-        L[Contract State PDA Management Program]
+        L[program State PDA Management Program]
         Z[Cross-Program Invocation Handler]
     end
 
     subgraph Storage Layer
         M[Arweave bundlr: NFT Metadata + URI]
-        N[IPFS/Filecoin via NFT.Storage: Contract Documents]
+        N[IPFS/Filecoin via NFT.Storage: program Documents]
         O[PostgreSQL: User Profiles + Messaging]
         O1[MongoDB: Analytics/Event Logs]
         O2[ElasticSearch: Search Indexing]
@@ -39,7 +39,7 @@ flowchart TB
         P[Solana mainnet-beta RPC endpoints]
         P1[Solana Program Deploy Framework]
         P2[Helius/GenesysGo Node Services]
-        Q[Metaplex Token Metadata Contract]
+        Q[Metaplex Token Metadata program]
         R[Firebase Cloud Messaging]
         S[Infrastructure: Docker + Kubernetes]
         T[CI/CD: GitHub Actions]
@@ -121,29 +121,29 @@ flowchart TB
 - **Authentication Service**: Multi-factor wallet-based authentication with JWT token issuance and session management
 - **NFT Marketplace Service**: Rust-based microservice for handling NFT operations with database projection
 - **WebSocket Messaging**: Real-time messaging infrastructure with presence detection and message persistence
-- **Smart Contract Service**: Transaction construction, signing, and simulation service with retry mechanisms
+- **Smart program Service**: Transaction construction, signing, and simulation service with retry mechanisms
 - **Escrow Orchestration**: State machine-based orchestration of multi-party escrow flows with recovery patterns
 - **Redis Cache**: In-memory caching layer for high-frequency queries with TTL expiration policies
 
 ### Blockchain Layer
 - **Metaplex NFT Protocol**: Implements the Metaplex NFT standard for cloth tokenization with custom attributes
-- **Contract Management Program**: Anchor-based Solana program with 1024-byte contract hash storage and verification
+- **program Management Program**: Anchor-based Solana program with 1024-byte program hash storage and verification
 - **Escrow Payment Program**: SPL token-based two-phase commit escrow system with time-locked release mechanism
-- **Status Tracking Program**: Program Derived Address (PDA) management for contract status on-chain with event emission
+- **Status Tracking Program**: Program Derived Address (PDA) management for program status on-chain with event emission
 - **CPI Handler**: Cross-Program Invocation facilitation module for atomic multi-program interactions
 
 ### Storage Layer
 - **Arweave/Bundlr**: Permanent storage for NFT metadata with content addressing and proof-of-access
-- **IPFS/Filecoin**: Decentralized document storage with content-addressable hashing for immutable contract records
+- **IPFS/Filecoin**: Decentralized document storage with content-addressable hashing for immutable program records
 - **PostgreSQL**: Relational database with foreign key constraints for user profiles and normalized data models
 - **MongoDB**: Document store for event logs and analytics with time-series optimization
-- **ElasticSearch**: Inverted index for fast full-text search across NFT metadata and contract terms
+- **ElasticSearch**: Inverted index for fast full-text search across NFT metadata and program terms
 
 ### Infrastructure
 - **Solana RPC**: JSON-RPC endpoints for mainnet-beta with load balancing and redundancy
 - **Program Deploy Framework**: Deployment pipeline for Solana program binaries with versioning and migration scripts
 - **Node Services**: Specialized RPC providers with archive data and websocket subscription support
-- **Metaplex Contracts**: Integration with Token Metadata standard contracts for NFT standards compliance
+- **Metaplex programs**: Integration with Token Metadata standard programs for NFT standards compliance
 - **Push Notifications**: Firebase Cloud Messaging for mobile alerts with topic-based subscription model
 - **Containerization**: Docker containers orchestrated by Kubernetes with auto-scaling policies
 - **CI/CD Pipeline**: GitHub Actions for automated testing, building, and deployment workflows
@@ -165,12 +165,12 @@ flowchart TB
    - NFT minted through Metaplex CandyMachine or direct mint instruction
    - Indexer captures on-chain event and updates ElasticSearch
 
-3. **Contract Creation Flow**:
-   - Contract terms serialized to JSON document
+3. **program Creation Flow**:
+   - program terms serialized to JSON document
    - Document hashed using SHA-256 algorithm
-   - Hash stored on-chain through Contract Management Program
+   - Hash stored on-chain through program Management Program
    - Full document stored on IPFS with CID reference on-chain
-   - Status PDA initialized with "Contract Started" state
+   - Status PDA initialized with "program Started" state
 
 4. **Escrow Payment Flow**:
    - Client deposits USDC (SPL token) into escrow program PDA
@@ -180,7 +180,7 @@ flowchart TB
 
 5. **Status Update Flow**:
    - Status update transaction signed by tailor
-   - Transaction validated against contract PDA authority
+   - Transaction validated against program PDA authority
    - State transition rules enforced on-chain
    - Event emitted and captured by off-chain indexer
    - GraphQL subscriptions notify all relevant parties
@@ -195,7 +195,7 @@ flowchart TB
 
 - **Scalability**: Horizontal scaling through stateless microservices and database sharding
 - **Security**: On-chain verification of all critical operations with off-chain convenience layer
-- **Privacy**: Zero-knowledge proofs for selective disclosure of contract terms
+- **Privacy**: Zero-knowledge proofs for selective disclosure of program terms
 - **Performance**: Read replicas and caching strategies to minimize RPC load
-- **Compliance**: Digital signature compliance with eIDAS regulation for contract validity
+- **Compliance**: Digital signature compliance with eIDAS regulation for program validity
 - **Fault Tolerance**: Circuit breaker patterns for RPC node failover and transaction retry with idempotency keys 
