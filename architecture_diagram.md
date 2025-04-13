@@ -156,8 +156,8 @@
 - Google Maps integration
 
 **Backend:**
-- Node.js/Nestjs server
-- PostgreSQL for off-chain data
+- Node.js/Express server
+- MongoDB for off-chain data
 - Push notification service
 - API gateway for service orchestration
 
@@ -189,6 +189,5 @@
    - Reference: https://developers.stellar.org/docs/build/apps/smart-wallets
 
 5. **Google Maps API**: For shipment tracking
-   - Reference: https://developers.google.com/maps/documentation/javascript
 
 This architecture enables Fabric Radar to provide a seamless experience for connecting tailors with clients, while leveraging blockchain technology for security, transparency and trust in the transaction process. 
