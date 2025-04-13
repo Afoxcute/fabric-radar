@@ -156,8 +156,8 @@
 - Google Maps integration
 
 **Backend:**
-- Node.js/Express server
-- MongoDB for off-chain data
+- Node.js/Nestjs server
+- PostgreSQL for off-chain data
 - Push notification service
 - API gateway for service orchestration
 
