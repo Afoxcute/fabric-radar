@@ -189,5 +189,6 @@
    - Reference: https://developers.stellar.org/docs/build/apps/smart-wallets
 
 5. **Google Maps API**: For shipment tracking
+   - Reference: https://developers.google.com/maps/documentation/javascript
 
 This architecture enables Fabric Radar to provide a seamless experience for connecting tailors with clients, while leveraging blockchain technology for security, transparency and trust in the transaction process. 
